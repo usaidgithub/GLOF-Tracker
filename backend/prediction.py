@@ -8,7 +8,8 @@ import math
 import os
 
 app = Flask(__name__)
-CORS(app)
+# Allow requests from any origin
+CORS(app, resources={r"/*": {"origins": "*"}})
 # Load the trained model
 model = joblib.load("improved_glof_rf_model.pkl")
 
